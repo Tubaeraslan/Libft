@@ -1,49 +1,56 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tubaeraslan <tubaeraslan@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/14 19:13:14 by tubaeraslan       #+#    #+#             */
-/*   Updated: 2024/10/14 19:20:08 by tubaeraslan      ###   ########.fr       */
+/*   Created: 2024/10/14 21:12:43 by tubaeraslan       #+#    #+#             */
+/*   Updated: 2024/10/14 21:24:01 by tubaeraslan      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-//needle dizisini haystack dizisinin içinde arar ve bukunduğu ilk yeri verir
+char *ft_strjoin(char const *s1, char const *s2){
+    char *result;
+    int i;
+    int j;
+    size_t total;
 
-char *ft_strnstr(const char *haystack, const char *needle, size_t len){
-    size_t i;
-    size_t n;
-
-    n = ft_strlen(needle);
-
-    if (n==0)
-    {
-        return (char *)haystack;
-    }
-    if (len == 0)
+    if (!s1 || !s2)
     {
         return NULL;
     }
+    
     i = 0;
-    while (i <= len - n && haystack[i]!='\0')
+    total=ft_strlen(s1)+ft_strlen(s2);
+    result=(char *)malloc((total*sizeof(char))+1);
+
+    if (!result)
     {
-        if (ft_strncmp(&haystack[i],needle,n)==0)
-        {
-            return (char *)&haystack[i];
-        }
+        return NULL;
+    }
+    while (s1[i]!='\0')
+    {
+        result[i]=((unsigned char *)s1)[i];
         i++;
     }
-    return NULL;
+    j = 0;
+    while (s2[j]!='\0')
+    {
+        result[i]=((unsigned char *)s2)[j];
+        i++;
+        j++;
+    }
+    result[i]='\0';
+    return result;
 }
 
 int main(int argc, char const *argv[])
 {
     char a[]="hello";
-    char b[]="ll";
-    printf("%s \n",ft_strnstr(a,b,5));
+    char b[]="world";
+    printf("%s \n",ft_strjoin(a,b));
     return 0;
 }

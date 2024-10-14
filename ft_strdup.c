@@ -1,29 +1,16 @@
-#include <stdio.h>
-#include <unistd.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tubaeraslan <tubaeraslan@student.42.fr>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/14 19:30:02 by tubaeraslan       #+#    #+#             */
+/*   Updated: 2024/10/14 19:30:17 by tubaeraslan      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void *ft_memcpy(void *dst, const void *src, size_t n){
-    size_t i;
-
-    if (dst == NULL && src == NULL)
-		return (0);
-    i = 0;
-    while (i < n)
-    {
-        ((unsigned char*)dst)[i]=((unsigned char*)src)[i];
-        i++;
-    }
-    return dst;
-}
-
-size_t	ft_strlen(const char *str)
-{
-	size_t	i;
-
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
-}
+#include "libft.h"
 
 char * ft_strdup(const char *s1){
     char	*str2;

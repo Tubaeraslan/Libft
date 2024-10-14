@@ -1,45 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tubaeraslan <tubaeraslan@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/14 17:46:14 by tubaeraslan       #+#    #+#             */
-/*   Updated: 2024/10/14 17:53:57 by tubaeraslan      ###   ########.fr       */
+/*   Created: 2024/10/14 18:12:24 by tubaeraslan       #+#    #+#             */
+/*   Updated: 2024/10/14 21:11:00 by tubaeraslan      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-//c yi(unsigned char a çevirip) len kadar alıp b nin içine kopyalar
+size_t ft_strlcpy(char * dst, const char * src, size_t dstsize){
+    size_t	i;
 
-void *ft_memset(void *b, int c, size_t len){
-    size_t i;
-
-    i = 0;
-    while (i < len)
-    {
-        ((unsigned char*)b)[i]=c;
-        i++;
-    }
-    return b;
+	i = 0;
+	if (dstsize > 0)
+	{
+		while (i < (dstsize - 1) && src[i] != '\0')
+		{
+			dst[i] = src[i];
+			i++;
+		}
+		dst[i] = '\0';
+	}
+	return (ft_strlen(src));
 }
 
 /*
 int main(int argc, char const *argv[])
 {
     char a[]="tuba";
-    ft_memset(a,'a',3);
-    printf("%s \n",a);
-
-    int b[]={1,2,3,4};
-    ft_memset(b,0,16);
-    for (int i = 0; i < 4; i++)
-    {
-        printf("%d \n",b[i]);
-    }
-    
+    char b[5];
+    ft_strlcpy(b,a,5);
+    printf("%s \n",b);
+    printf("%zu \n",ft_strlcpy(b,a,5));
     return 0;
 }
 */

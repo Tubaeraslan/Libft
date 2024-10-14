@@ -1,45 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tubaeraslan <tubaeraslan@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/14 17:46:14 by tubaeraslan       #+#    #+#             */
-/*   Updated: 2024/10/14 17:53:57 by tubaeraslan      ###   ########.fr       */
+/*   Created: 2024/10/14 18:33:28 by tubaeraslan       #+#    #+#             */
+/*   Updated: 2024/10/14 18:37:30 by tubaeraslan      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-//c yi(unsigned char a çevirip) len kadar alıp b nin içine kopyalar
-
-void *ft_memset(void *b, int c, size_t len){
-    size_t i;
-
-    i = 0;
-    while (i < len)
+int ft_toupper(int c){
+    if (c>=97 && c <=122)
     {
-        ((unsigned char*)b)[i]=c;
-        i++;
+        return c-32;
     }
-    return b;
+    return c;
 }
 
-/*
 int main(int argc, char const *argv[])
 {
-    char a[]="tuba";
-    ft_memset(a,'a',3);
-    printf("%s \n",a);
-
-    int b[]={1,2,3,4};
-    ft_memset(b,0,16);
-    for (int i = 0; i < 4; i++)
-    {
-        printf("%d \n",b[i]);
-    }
-    
+    printf("%c \n",ft_toupper('a'));
     return 0;
 }
-*/

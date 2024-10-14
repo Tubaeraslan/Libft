@@ -1,5 +1,16 @@
-#include <stdio.h>
-#include <unistd.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tubaeraslan <tubaeraslan@student.42.fr>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/14 17:55:12 by tubaeraslan       #+#    #+#             */
+/*   Updated: 2024/10/14 18:08:06 by tubaeraslan      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
 
 //src nin n kadar değerini alıp dst ye kopyalar(unsigned char a dönüştürür) hata durumunda 0 döner
 
@@ -19,6 +30,7 @@ void *ft_memcpy(void *dst, const void *src, size_t n){
     return dst;
 }
 
+/*
 int main(int argc, char const *argv[])
 {
     char a[5];
@@ -36,3 +48,4 @@ int main(int argc, char const *argv[])
     
     return 0;
 }
+*/

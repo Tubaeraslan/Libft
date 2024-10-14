@@ -1,6 +1,16 @@
-#include <stdio.h>
-#include <unistd.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tubaeraslan <tubaeraslan@student.42.fr>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/14 18:57:35 by tubaeraslan       #+#    #+#             */
+/*   Updated: 2024/10/14 19:19:04 by tubaeraslan      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "libft.h"
 
 int ft_strncmp(const char *s1, const char *s2, size_t n){
     unsigned int	i;
@@ -13,6 +23,7 @@ int ft_strncmp(const char *s1, const char *s2, size_t n){
 	return (s1[i] - s2[i]);
 }
 
+/*
 int main(int argc, char const *argv[])
 {
     char a[]="tuba";
@@ -23,3 +34,4 @@ int main(int argc, char const *argv[])
 
     return 0;
 }
+*/

@@ -1,17 +1,18 @@
-#include <stdio.h>
-#include <stddef.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tubaeraslan <tubaeraslan@student.42.fr>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/14 18:58:17 by tubaeraslan       #+#    #+#             */
+/*   Updated: 2024/10/14 18:59:47 by tubaeraslan      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
 
 //c nin s içinde bulunduğu son yeri verir
-
-size_t	ft_strlen(const char *str)
-{
-	size_t	i;
-
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
-}
 
 char *ft_strrchr(const char *s, int c){
     int i;
@@ -32,6 +33,6 @@ int main(int argc, char const *argv[])
 {
     char a[]="tubatur";
     char x='t';
-    printf("%s",ft_strrchr(a,x));
+    printf("%p",ft_strrchr(a,x));
     return 0;
 }
