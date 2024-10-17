@@ -1,31 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tubaeraslan <tubaeraslan@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/16 18:21:04 by tubaeraslan       #+#    #+#             */
-/*   Updated: 2024/10/17 19:04:57 by tubaeraslan      ###   ########.fr       */
+/*   Created: 2024/10/17 19:09:52 by tubaeraslan       #+#    #+#             */
+/*   Updated: 2024/10/17 19:22:21 by tubaeraslan      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putnbr_fd(int n, int fd){
-    long	nb;
+t_list *ft_lstnew(void *content){
+    t_list *new;
+    new = malloc(sizeof(t_list));
+    if (!new)
+    {
+        return 0;
+    }
+    new->content=content;
+    new->next=NULL;
+    return new;
+}
 
-	nb = n;
-	if (nb < 0)
-	{
-		ft_putchar_fd('-', fd);
-		nb = (nb * -1);
-	}
-	if (nb < 10)
-		ft_putchar_fd(nb + 48, fd);
-	if (nb > 9)
-	{
-		ft_putnbr_fd(nb / 10, fd);
-		ft_putnbr_fd(nb % 10, fd);
-	}
+int main(int argc, char const *argv[])
+{
+    t_list *node;
+    char *data = "hello world";
+    node = ft_lstnew(data);
+
+    if (node)
+    {
+        printf("%s \n",(char *)node->content);
+    }
+    
+    return 0;
 }
